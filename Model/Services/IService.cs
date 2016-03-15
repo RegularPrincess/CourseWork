@@ -9,7 +9,8 @@ namespace ModelForCourseWork.Services
 {
     interface IService
     {
-        Question getFirstQuestion();
+        // Основная логика взаимодействия с моделями
+        Question getFirstQuestion(string NameOfDialog);
         Question getNextQuestion(string answer, Question question);
     }
 }

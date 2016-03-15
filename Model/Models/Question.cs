@@ -8,28 +8,30 @@ namespace ModelForCourseWork.Models
 {
     public class Question
     {
-        public Question(string question, Dictionary<string, Question> answers)
+        private string questionStr;
+        private int id;
+        Dictionary<string, Question> answers;
+
+        public Question(string question, Dictionary<string, Question> answers, int id)
         {
             questionStr = question;
+            this.id = id;
             this.answers = answers; 
         }
-        public Question(string question)
+        public Question(string question, int id)
         {
+            this.id = id;
             questionStr = question;
             answers = new Dictionary<string, Question>();
         }
-
-        private string questionStr;
-        Dictionary<string, Question> answers;
-
         public string QuestionStr
         {
             get { return questionStr; }
         }
                 
-        public Dictionary<string, Question> Answers
+        public Question getNextQuestion(string answer)
         {
-            get { return answers; }
+            return answers[answer];
         }
 
         public bool addAnswer(string answer, Question question)

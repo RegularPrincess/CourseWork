@@ -8,6 +8,7 @@ namespace ModelForCourseWork.Models
 {
     public class Dialog
     {
+        String name;
         List<Question> questions;
     }
 }
